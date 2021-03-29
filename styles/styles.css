@@ -1,9 +1,9 @@
 * {
-    background-color: lightblue;
-    color: blue;
+    color: navy;
     font-family: cursive;
+    font-size: xx-large;
 }
-.para {
-    background-color: lightpink;
-    
+.para{
+    background-color: lightblue;
+    background-image:url(../../../windows.jpg);
 }
