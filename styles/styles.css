@@ -31,22 +31,31 @@ a,.service-box i, i{
 }
 .first-row{
     margin-top: 5px;
-    margin-bottom: 24%;
     width: 8%;
     float: left;
     font-size: 20px;
+    margin-bottom: 200px;
+    padding-left: 4px;
 }
 .second-row{
     width: 8%;
-    margin-bottom: 23%;
     font-size: 18px;
-}
-.left-bar{
-    background-attachment: fixed;
+    margin-bottom: 200px;
 }
 .second-row>.icon>i{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    padding-left: 4px;
 } 
 .third-row{
     font-size: 21px;
+}
+.left-bar{
+    width: 2%;
+    height: 100%;
+    display: inline-block;
+    margin-left: 10px;
+    padding: 4px;
+    background-color: rgb(87, 87, 87);
+    background-size: 100%;
+    background-attachment: fixed;
 }
