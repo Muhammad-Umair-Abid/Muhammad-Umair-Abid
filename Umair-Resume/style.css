@@ -1,3 +1,31 @@
 body{
     background-color: rgb(24, 24, 24);
+    color: rgb(148, 148, 148);
+}
+p{
+    color: rgb(148, 148, 148);
+}
+.container{
+    width: 60%;
+    display: block;
+    margin: 12px;
+    float: right;
+}
+.heading{
+    font-family: sans-serif;
+    color:#fff;
+}
+a,.service-box i{
+    color: aqua;
+}
+.service-box{
+    width: 49%;
+    display: inline-block;
+}
+.service-box i{
+    font-size: 24px;
+}
+.bread-grums span{
+    color: rgb(148, 148, 148);
+    padding: 0 15px;
 }
