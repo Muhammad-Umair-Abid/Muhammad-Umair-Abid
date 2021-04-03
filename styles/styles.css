@@ -32,7 +32,6 @@ a,.service-box i, i{
 .first-row{
     margin-top: 5px;
     width: 8%;
-    float: left;
     font-size: 20px;
     margin-bottom: 200px;
     padding-left: 4px;
@@ -58,4 +57,10 @@ a,.service-box i, i{
     background-color: rgb(87, 87, 87);
     background-size: 100%;
     background-attachment: fixed;
+    float: left;
+}
+img{
+    width: 360px ;
+    padding-left: 50px;
+    opacity: 70%;
 }
