@@ -20,9 +20,9 @@ let maxDays = 0
 let monthNum = 0
 
 btn.addEventListener("click", (days,month,year) => {
-    days = daysGiven.Value
-    month = monthGiven.Value
-    year = yearGiven.Value
+    days = daysGiven.value
+    month = monthGiven.value
+    year = yearGiven.value
 
     if (daysGiven.value === "" || monthGiven.value === "" || yearGiven.value === "" ){
         return alert("Please Enter Your Date of Birth Properly")
@@ -30,61 +30,61 @@ btn.addEventListener("click", (days,month,year) => {
 
     console.log(`Current Date : ${days} ${month} ${year}` );
 
-    // if (m === 1){
-    //     maxDays = 31 ;
-    //     monthNum = 1 ;
-    // } 
-    // else if (m === 2){
-    //     maxDays = 28 ;
-    //     monthNum = 2 ;
-    // }
-    // else if (m === 3){
-    //     maxDays = 31 ;
-    //     monthNum = 3 ;
-    // }
-    // else if (m === 4){
-    //     maxDays = 30 ;
-    //     monthNum = 4 ;
-    // }
-    // else if (m === 5){
-    //     maxDays = 31 ;
-    //     monthNum = 5 ;
-    // }
+    if (m === 1){
+        maxDays = 31 ;
+        monthNum = 1 ;
+    } 
+    else if (m === 2){
+        maxDays = 28 ;
+        monthNum = 2 ;
+    }
+    else if (m === 3){
+        maxDays = 31 ;
+        monthNum = 3 ;
+    }
+    else if (m === 4){
+        maxDays = 30 ;
+        monthNum = 4 ;
+    }
+    else if (m === 5){
+        maxDays = 31 ;
+        monthNum = 5 ;
+    }
 
-    // else if (m === 6){
-    //     maxDays = 30 ;
-    //     monthNum = 6 ;
-    // }
+    else if (m === 6){
+        maxDays = 30 ;
+        monthNum = 6 ;
+    }
 
-    // else if (m === 7){
-    //     maxDays = 31 ;
-    //     monthNum = 7 ;
-    // }
+    else if (m === 7){
+        maxDays = 31 ;
+        monthNum = 7 ;
+    }
 
-    // else if (m === 8){
-    //     maxDays = 31 ;
-    //     monthNum = 8 ;
-    // }
+    else if (m === 8){
+        maxDays = 31 ;
+        monthNum = 8 ;
+    }
 
-    // else if (m === 9){
-    //     maxDays = 30 ;
-    //     monthNum = 9 ;
-    // }
+    else if (m === 9){
+        maxDays = 30 ;
+        monthNum = 9 ;
+    }
 
-    // else if (m === 10){
-    //     maxDays = 31 ;
-    //     monthNum = 10 ;
-    // }
+    else if (m === 10){
+        maxDays = 31 ;
+        monthNum = 10 ;
+    }
 
-    // else if (m === 11){
-    //     maxDays = 30 ;
-    //     monthNum = 11 ;
-    // }
+    else if (m === 11){
+        maxDays = 30 ;
+        monthNum = 11 ;
+    }
 
-    // else if (m === 12){
-    //     maxDays = 31 ;
-    //     monthNum = 12 ;
-    // }
+    else if (m === 12){
+        maxDays = 31 ;
+        monthNum = 12 ;
+    }
 
     var ageYear = y - year;
 
@@ -94,7 +94,10 @@ btn.addEventListener("click", (days,month,year) => {
 
     var ageMonth = m - month;
 
-    var ageDay = (maxDays - d) + parseInt(days);
+    var ageDay = (maxDays - d) + parseInt(days) ;
 
-    console.log(`You Are ${ageYear}, ${ageMonth}Month & ${ageDay} Days Old`)
+console.log(parseInt(days))
+
+    console.log(`You Are ${ageYear} Year , ${ageMonth} Month & ${ageDay} Days Old`)
+    showAge.innerHTML= `You Are ${ageYear} Year , ${ageMonth} Month & ${ageDay} Days Old`
 })
