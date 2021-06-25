@@ -1,0 +1,46 @@
+.container , #show-age{
+    border-style: outset;
+    border-color: rgb(255, 217, 0);
+    border-width: 5px;
+    border-radius: 10px;
+    width: 50%;
+    background-color: rgb(248, 248, 248);
+    padding-bottom: 20px;
+    margin: auto;
+    text-align: center;
+    height: fit-content;
+}
+h2{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(253, 109, 93);
+}
+input{
+    max-width: 100px;
+}
+body{
+    margin: 50px;
+    background-color: seagreen;
+}
+.calculate{
+    border-style: outset;
+    border-color:rgb(251, 179, 22);
+    border-width: 5px;
+    border-radius: 10px;
+    background-color: rgb(248, 248, 248);
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    width: max-content;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+button{
+    Border:none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(248, 248, 248);
+}
+#show-age{
+    padding: 5px;
+}
