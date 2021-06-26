@@ -16,6 +16,8 @@ let d = today.getDate();
 let m = today.getMonth()+1; 
 let y = today.getFullYear();
 
+console.log(y)
+
 let maxDays = 0
 let monthNum = 0
 
@@ -24,7 +26,7 @@ btn.addEventListener("click", (days,month,year) => {
     month = monthGiven.value
     year = yearGiven.value
 
-    if (daysGiven.value === "" || monthGiven.value === "" || yearGiven.value === "" ){
+    if (daysGiven.value === "" || monthGiven.value === "" || yearGiven.value === ""){
         return alert("Please Enter Your Date of Birth Properly")
     }
 
@@ -85,6 +87,11 @@ btn.addEventListener("click", (days,month,year) => {
         maxDays = 31 ;
         monthNum = 12 ;
     }
+
+    if( month > 12  || year > y){
+        return alert("Please Enter Your Date of Birth Properly")
+    }
+
 
     var ageYear = y - year;
 
