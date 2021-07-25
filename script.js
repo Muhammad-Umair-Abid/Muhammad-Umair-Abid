@@ -1,110 +1,58 @@
-// function getDOB(value){
-//     console.log(new Date(value))
+// 1st assignment
+
+// var itemsArray = [
+//     {name:"Juice",price:50, quantity:3 },
+//     {name:"Cookie",price:30, quantity:9 },
+//     {name:"Shirt",price:880, quantity:1 },
+//     {name:"Pen",price:100, quantity:2 }];
+
+
+// for (var i = 0; i < itemsArray.length; i++) {
+//     console.log("The Total Price of " + itemsArray[i].quantity + " pack of " + itemsArray[i].name + " is " + itemsArray[i].price * itemsArray[i].quantity); 
+// };
+
+// let totalPrice = 0 ;
+
+// console.log("");
+
+// for (var i = 0; i < itemsArray.length; i++ ){
+//     totalPrice += itemsArray[i].price*itemsArray[i].quantity
+// };
+
+// console.log("The total price of all items are " + totalPrice );
+
+
+// 2nd Assignment
+
+// var obj = {
+//     name: "Umair",
+//     email: "u@u.com",
+//     password: 1234,
+//     age: 19,
+//     gender: "M",
+//     city:"Karachi",
+//     country:"Pakistan"
 // }
 
-let daysGiven = document.getElementById("date");
-let monthGiven = document.getElementById("month");
-let yearGiven = document.getElementById("year");
-
-let showAge = document.getElementById("show-age");
-
-let btn = document.getElementById("calc");
-
-var today = new Date();
-
-let d = today.getDate();
-let m = today.getMonth()+1; 
-let y = today.getFullYear();
-
-console.log(y)
-
-let maxDays = 0
-let monthNum = 0
-
-btn.addEventListener("click", (days,month,year) => {
-    days = daysGiven.value
-    month = monthGiven.value
-    year = yearGiven.value
-
-    if (daysGiven.value === "" || monthGiven.value === "" || yearGiven.value === ""){
-        return alert("Please Enter Your Date of Birth Properly")
-    }
-
-    console.log(`Current Date : ${days} ${month} ${year}` );
-
-    if (m === 1){
-        maxDays = 31 ;
-        monthNum = 1 ;
-    } 
-    else if (m === 2){
-        maxDays = 28 ;
-        monthNum = 2 ;
-    }
-    else if (m === 3){
-        maxDays = 31 ;
-        monthNum = 3 ;
-    }
-    else if (m === 4){
-        maxDays = 30 ;
-        monthNum = 4 ;
-    }
-    else if (m === 5){
-        maxDays = 31 ;
-        monthNum = 5 ;
-    }
-
-    else if (m === 6){
-        maxDays = 30 ;
-        monthNum = 6 ;
-    }
-
-    else if (m === 7){
-        maxDays = 31 ;
-        monthNum = 7 ;
-    }
-
-    else if (m === 8){
-        maxDays = 31 ;
-        monthNum = 8 ;
-    }
-
-    else if (m === 9){
-        maxDays = 30 ;
-        monthNum = 9 ;
-    }
-
-    else if (m === 10){
-        maxDays = 31 ;
-        monthNum = 10 ;
-    }
-
-    else if (m === 11){
-        maxDays = 30 ;
-        monthNum = 11 ;
-    }
-
-    else if (m === 12){
-        maxDays = 31 ;
-        monthNum = 12 ;
-    }
-
-    if( month > 12  || year > y){
-        return alert("Please Enter Your Date of Birth Properly")
-    }
+// var findProperty = prompt("Enter any property to find");
+// if (findProperty.toLowerCase() in obj) {
+//     console.log("This property is exist")
+// } else{
+//     console.log("This Property does not exist")
+// }
 
 
-    var ageYear = y - year;
+// 3rd Assignment
 
-    if(m <= month){
-        m = m + 12;
-    }
+function Student(name, age, email, city) {
+    this.name = name;
+    this.age = age;
+    this.email = email;
+    this.city = city
+}
 
-    var ageMonth = m - month;
+var student1 = new Student("Nadeem", 50, "Nad@gmail.com", "Khi");
+var student1 = new Student("Umar", 28, "umar@hotmail.com", "Hydrabad");
+var student1 = new Student("Salman", 33, "salman@yahoo.com", "Lahore");
 
-    var ageDay = (maxDays - d) + parseInt(days) ;
-
-console.log(parseInt(days))
-
-    console.log(`You Are ${ageYear} Year , ${ageMonth} Month & ${ageDay} Days Old`)
-    showAge.innerHTML= `You Are ${ageYear} Year , ${ageMonth} Month & ${ageDay} Days Old`
-})
+console.log(new Student("umair",12,"asa@ld.com", "khi"));
