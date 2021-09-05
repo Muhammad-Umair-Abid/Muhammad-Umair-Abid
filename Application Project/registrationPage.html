@@ -6,27 +6,31 @@
 </head>
 <body>
 
-  <div class="register" >
-    <form action="#" method="post" class="main-container">
-         <div class="imgcontainer">
-          <h1 style="position:relative;">Register</h1>
-          <img src="./avatar.png" alt="Avatar" class="avatar">
-         </div>
- 
-         <div class="container">
-           <label for="uname"><b>User Name:</b></label>
-           <input type="text" placeholder="Enter Your Name" required>
- 
-           <label for="email"><b>Email:</b></label>
-           <input type="text" placeholder="Enter your email" name="uname" required>
-       
-           <label for="password"><b>Password:</b></label>
-           <input type="password" placeholder="Enter Password" name="psw" required>
-       
-           <button type="submit">Login</button>
-           <p>already have an account? <a href="./signInPage.html">sign in</a></p>  
-         </div>
-       </form>
- </div>
+  <div class="main-container" >
+    <form action="JavaScript:void(0)" method="POST">
+      <div class="imgcontainer">
+        <h1>Register</h1>
+        <img src="./avatar.png" alt="Avatar" class="avatar">
+       </div>
+
+
+       <div class="container">
+         <label for="uname"><b>User Name:</b></label>
+         <input id="uName" type="text" placeholder="Enter Your Name" name="uname" required>
+
+         <label for="email"><b>Email:</b></label>
+         <input id="email" type="email" placeholder="Enter your email" name="email" required>
+     
+         <label for="psw"><b>Password:</b></label>
+         <input id="pass" type="password" placeholder="Enter Password" name="psw" required>
+     
+         <button type="submit" onclick="register()"> Register </button>
+         <p>already have an account? <a href="./signInPage.html">sign in</a></p>  
+       </div>
+    </form>
+
+  </div>
+
+ <script src="./script.js"></script>
 </body>
 </html>

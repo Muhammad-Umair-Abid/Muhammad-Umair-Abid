@@ -39,7 +39,8 @@ input{
   }
     
  .imgcontainer {
-    text-align: center;    
+    text-align: center;
+    position:relative;    
   }
   
   img.avatar {
