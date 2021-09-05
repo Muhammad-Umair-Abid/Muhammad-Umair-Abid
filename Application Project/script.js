@@ -31,6 +31,8 @@ addUser("members", members)
 }
 
 window.location.href="signInPage.html"
+var uName = getData("members")[0].name
+
 };
 
 
@@ -47,6 +49,7 @@ let signIn = () => {
 let uEmail = getData("members")[0].email
 let uPass = getData("members")[0].password
 
+
 if(signInEmail === uEmail && signInPass === uPass){
     window.location.href="./Web/home_page.html"
 } else {
@@ -61,6 +64,4 @@ let uName = getData("members")[0].name
 
 let wellcome = document.getElementById("wellcome")
 wellcome.innerHTML = `Wellcome: ${uName}` 
-
-console.log(getData("members"))
 
