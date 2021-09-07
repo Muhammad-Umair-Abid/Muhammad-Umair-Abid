@@ -11,6 +11,10 @@ function User(userName,userEmail,userPass) {
     this.password = userPass
 };
 
+let uEmail 
+let uPass
+let uName
+
 
 // Getting Data To Register 
 
@@ -43,32 +47,35 @@ let signIn = () => {
     let signInEmail = document.getElementById("uEmail").value;
     let signInPass = document.getElementById("uPass").value;
 
+// Now Check if the user data is already availabe in Local Storage
 
-// Now Check if the signin data is availabe 
+let data = getData("members")
+let eMailfound = false
+for(var i = 0 ; i < data.length ; i++){
 
-let uEmail = getData("members")[0].email
-let uPass = getData("members")[0].password
-let uName = getData("members")[0].name
+   console.log(`Finding in ${i}`)
+   
+    if (data[i].email === signInEmail) {
+        uEmail = data[i].email
+        uPass = data[i].password
+        uName = data[i].name
 
+        eMailfound = true
+        break;
+    } 
+}
 
-if(signInEmail === uEmail && signInPass === uPass){
-    window.location.href="./Web/home_page.html"
-    let wellcome = document.getElementById("wellcome")
-    wellcome.innerHTML = `Wellcome: ${uName}` 
-    
+if(eMailfound){
+    if(uEmail === signInEmail && uPass === signInPass){
+        window.location.href="./Web/home_page.html"
+        let wellcome = document.getElementById("wellcome")
+        wellcome.innerHTML = `Wellcome: ${uName}`
+        console.log(uName)    
 
-} else {
-    alert("Please Enter email & password Correctly")
+    } else {
+        alert ("Please enter email & password correctly")
+    }
+} else{
+    alert("This email does not Exist")
 }
 }
-
-let uEmail = getData("members")[0].email
-let uPass = getData("members")[0].password
-let uName = getData("members")[0].name
-
-
-let wellcome = document.getElementById("wellcome")
-wellcome.innerHTML = `Wellcome: ${uName}` 
-
-console.log(getData("members"))
-
