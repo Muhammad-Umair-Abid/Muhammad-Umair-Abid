@@ -3,16 +3,21 @@
 <head>
     <title>Home Page</title>
     <link rel="stylesheet" href="../style.css">
-    <script>
-        var wellcome = document.getElementById("wellcome")
-        wellcome.innerHTML = JSON.parse (localStorage.getItem("members"))
-    </script>
+    <style>
+
+    </style>
+    
 </head>
 <body>
     <div class="main-container">
         <h1 style="position:relative; text-align: center; " id="wellcome"> "Hello User"</h1>
     </div>
+    <div class="header">
+        <button class="logout" onclick="logout()">Logout</button>
+    </div>
 
+    
+    
     <script src="../script.js"></script>
 </body>
 </html>
