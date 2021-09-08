@@ -3,7 +3,10 @@
 <head>
     <title>Home Page</title>
     <link rel="stylesheet" href="../style.css">
-    <style></style>
+    <script>
+        var wellcome = document.getElementById("wellcome")
+        wellcome.innerHTML = JSON.parse (localStorage.getItem("members"))
+    </script>
 </head>
 <body>
     <div class="main-container">

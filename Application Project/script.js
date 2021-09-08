@@ -19,23 +19,57 @@ let uName
 // Getting Data To Register 
 
 let register = () => {
-   var userName = document.getElementById("uName").value;
-   var userEmail = document.getElementById("email").value;
-   var userPass = document.getElementById("pass").value;
-
-let user = new User(userName.toLowerCase(),userEmail.toLowerCase(),userPass)
+   let userName = document.getElementById("uName").value.toLowerCase();
+   let userEmail = document.getElementById("email").value;
+   let userPass = document.getElementById("pass").value;
 
 
-if(localStorage.length===0){
-    addUser("members",[user])
+let user
+
+if (userName !== "" && userEmail !== "" && userPass !== ""){
+    user = new User(userName.toLowerCase(),userEmail.toLowerCase(),userPass)
 } else {
-   let members = getData("members")
-   members.push(user)
-addUser("members", members)
+    alert("Please Fill all Feilds Correctly")
 }
 
-window.location.href="signInPage.html"
 
+let authentefication = false
+
+
+if(user){
+    if(localStorage.length===0){
+        addUser("members",[user])
+        userName =""
+        userEmail =""
+        userPass = ""
+
+        window.location.href="signInPage.html" 
+
+    } else{
+        let dataBase = getData("members")
+        for(var j = 0 ; j < localStorage.length; j++){
+            if(!(userName === dataBase[j].name || dataBase[j].email === userEmail)) {
+                authentefication = true
+            } else {
+                alert("User-name or email already Exist")
+            }
+        }
+    }
+} else{
+    alert(" Please fill all Feilds Correctly ")
+}
+
+if(authentefication){
+
+       let members = getData("members")
+       members.push(user)
+        addUser("members", members)
+        userName =""
+        userEmail =""
+        userPass = "";
+
+        window.location.href="signInPage.html"
+    }
 
 };
 
@@ -59,7 +93,6 @@ for(var i = 0 ; i < data.length ; i++){
         uEmail = data[i].email
         uPass = data[i].password
         uName = data[i].name
-
         eMailfound = true
         break;
     } 
@@ -68,14 +101,15 @@ for(var i = 0 ; i < data.length ; i++){
 if(eMailfound){
     if(uEmail === signInEmail && uPass === signInPass){
         window.location.href="./Web/home_page.html"
-        let wellcome = document.getElementById("wellcome")
-        wellcome.innerHTML = `Wellcome: ${uName}`
-        console.log(uName)    
 
     } else {
         alert ("Please enter email & password correctly")
     }
-} else{
+} else {
     alert("This email does not Exist")
 }
 }
+
+// let wellcome = document.getElementById("wellcome").innerHTML;
+
+// console.log(` ${uName} `)

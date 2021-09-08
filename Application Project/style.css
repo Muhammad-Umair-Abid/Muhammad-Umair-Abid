@@ -4,6 +4,7 @@
   color: rgb(207, 210, 218);
 }
 body{
+  display: flex;
   background-image: url(./background.jpg);
   background-size: cover;
   height: 100vh;
@@ -55,6 +56,9 @@ input{
   }
 
   .main-container{
+    position: relative;
+    align-items: center;
+    
     background:#001a4ba4;
     border: 2px solid #f1f1f1;
     box-shadow: 3px 1px 15px black;
