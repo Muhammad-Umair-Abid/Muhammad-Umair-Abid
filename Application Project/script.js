@@ -113,10 +113,10 @@ if(eMailfound){
 
 
 
-let wellcome = document.getElementById("wellcome").innerHTML;
+let wellcome = document.getElementById("wellcome");
 let LoggedUserData = Common.getData("loggedUser")
 
-let userNmae = LoggedUserData.name.toUpperCase()
+let userNmae = LoggedUserData.name
 
 wellcome = `Wellcome: ${userNmae} `
 
