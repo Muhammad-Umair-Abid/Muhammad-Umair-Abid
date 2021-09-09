@@ -75,7 +75,7 @@ input{
   
   .container {
     padding: 16px;
-    display: flex;
+    /* display: flex; */
   }
 
   .container#blur.active {
@@ -93,7 +93,7 @@ input{
     background:#001a4ba4;
     border: 2px solid #f1f1f1;
     box-shadow: 3px 1px 15px black;
-    width: 50%;
+    width: 40%;
     margin: auto;
   }
 
