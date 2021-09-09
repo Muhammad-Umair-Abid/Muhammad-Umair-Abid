@@ -3,21 +3,58 @@
 <head>
     <title>Home Page</title>
     <link rel="stylesheet" href="../style.css">
-    <style>
 
-    </style>
-    
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
+ <script src="../common.js"></script>
 </head>
-<body>
-    <div class="main-container">
-        <h1 style="position:relative; text-align: center; " id="wellcome"> "Hello User"</h1>
-    </div>
-    <div class="header">
-        <button class="logout" onclick="logout()">Logout</button>
-    </div>
 
+
+<body>
+
+<div class="container" id="blur" style="height: 100vh;">
+        
+<!-- set the Header -->
+    <div class="header" id="blur">
+        <button class="logout" onclick="Common.logoutUser()">Logout</button>
+    </div>
+   
+   <!-- set the main Container -->
+    <div class="main-container" >
+        <h1 style="font-size: 3em; position:relative; text-align: center; " id="wellcome"></h1>
+               <div style="width: 25%">
+                    <a href="JavaScript:void(0)"  onclick="toogle()">
+                        <button >Add Team</button>
+                    </a>
+               </div>
+    </div>
+       
+</div>
+
+<div id="pop-up">
+    <h2 style="text-align: center;">Create a new Team</h2>
+    <input type="text" placeholder="Team Name">
+    <input type="text" placeholder="Members (type email)"> 
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel itaque provident veniam ab officiis aspernatur,
+        alias qui id natus ducimus? Tempora reprehenderit pariatur vitae molestiae!
+         Dolorem distinctio iusto ratione ipsum.
+    </p>
+    <div style="width: 25%">
+        <a href="JavaScript:void(0)"  onclick="toogle()">
+            <button >Close</button>
+        </a>
+   </div>
+</div>
     
-    
-    <script src="../script.js"></script>
+
+  <script src="../script.js"></script>
+  <script type="text/javascript">
+
+
+        if(!Common.isUserLoggedIn()){
+            window.location.href="../signInPage.html"
+        }
+  </script>
 </body>
 </html>

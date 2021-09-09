@@ -1,15 +1,11 @@
-
-let addUser = (key,value) => {
-    localStorage.setItem(key,JSON.stringify(value));
+class User{
+    constructor(userName,userEmail,userPass) {
+        this.name       = userName;
+        this.email      = userEmail;
+        this.password   = userPass
+        this.team_owner = 0
+    };
 }
-let getData = (key) => JSON.parse(localStorage.getItem(key))
-
-
-function User(userName,userEmail,userPass) {
-    this.name = userName;
-    this.email = userEmail;
-    this.password = userPass
-};
 
 let uEmail 
 let uPass
@@ -38,7 +34,7 @@ let authentefication = false
 
 if(user){
     if(localStorage.length===0){
-        addUser("members",[user])
+        Common.saveData("members",[user])
         userName =""
         userEmail =""
         userPass = ""
@@ -46,8 +42,8 @@ if(user){
         window.location.href="signInPage.html" 
 
     } else{
-        let dataBase = getData("members")
-        for(var j = 0 ; j < localStorage.length; j++){
+        let dataBase = Common.getData("members")
+        for(var j = 0 ; j < Common.getData("members").length; j++){
             if(!(userName === dataBase[j].name || dataBase[j].email === userEmail)) {
                 authentefication = true
             } else {
@@ -61,9 +57,9 @@ if(user){
 
 if(authentefication){
 
-       let members = getData("members")
+       let members = Common.getData("members")
        members.push(user)
-        addUser("members", members)
+       Common.saveData("members", members)
         userName =""
         userEmail =""
         userPass = "";
@@ -83,23 +79,26 @@ let signIn = () => {
 
 // Now Check if the user data is already availabe in Local Storage
 
-let data = getData("members")
-let eMailfound = false
+let data = Common.getData("members")
+let eMailfound  = false
+let user        = {};
 for(var i = 0 ; i < data.length ; i++){
 
    console.log(`Finding in ${i}`)
    
     if (data[i].email === signInEmail) {
-        uEmail = data[i].email
-        uPass = data[i].password
-        uName = data[i].name
+        user.email      = data[i].email
+        user.password   = data[i].password
+        user.name       = data[i].name
+        user.team_owner = data[i].team_owner
         eMailfound = true
         break;
     } 
 }
 
 if(eMailfound){
-    if(uEmail === signInEmail && uPass === signInPass){
+    if(user.email === signInEmail && user.password === signInPass){
+        Common.saveData('loggedUser', user);
         window.location.href="./Web/home_page.html"
 
     } else {
@@ -110,6 +109,26 @@ if(eMailfound){
 }
 }
 
-// let wellcome = document.getElementById("wellcome").innerHTML;
+// Now get data for home page
 
-// console.log(` ${uName} `)
+
+
+let wellcome = document.getElementById("wellcome").innerHTML;
+let LoggedUserData = Common.getData("loggedUser")
+
+let userNmae = LoggedUserData.name.toUpperCase()
+
+wellcome = `Wellcome: ${userNmae} `
+
+document.getElementById("wellcome").innerHTML = wellcome
+
+
+function toogle () {
+    let blur = document.getElementById("blur")
+    console.log(blur)
+    blur.classList.toggle("active")
+    
+    let popUp = document.getElementById("pop-up")
+    console.log(popUp)
+    popUp.classList.toggle("active")
+}
