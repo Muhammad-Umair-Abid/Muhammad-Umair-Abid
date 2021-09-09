@@ -51,10 +51,7 @@ if(user){
             }
         }
     }
-} else{
-    alert(" Please fill all Feilds Correctly ")
 }
-
 if(authentefication){
 
        let members = Common.getData("members")
@@ -116,7 +113,7 @@ if(eMailfound){
 let wellcome = document.getElementById("wellcome");
 let LoggedUserData = Common.getData("loggedUser")
 
-let userNmae = LoggedUserData.name
+let userNmae = LoggedUserData.name.toUpperCase();
 
 wellcome = `Wellcome: ${userNmae} `
 
@@ -132,3 +129,5 @@ function toogle () {
     console.log(popUp)
     popUp.classList.toggle("active")
 }
+
+

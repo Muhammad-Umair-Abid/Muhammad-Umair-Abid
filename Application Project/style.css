@@ -14,7 +14,7 @@ body{
   background-color: #00000063;
 }
 
-input{
+input , select {
     color: black;
     width: 100%;
     padding: 12px 20px;
@@ -43,7 +43,7 @@ input{
   .header{
     background-color: rgba(10,10,10,0.5);
     border: 1px solid #0f123062;
-    box-shadow: 0 4px 2px black;
+    box-shadow: 0 4px 5px black;
     position: absolute;
     left: 5px;
     top: 5px;
@@ -122,14 +122,16 @@ a{
   border: 1px solid #858ac062;
   box-shadow: 0 5px 30px rgba(0,0,0, 1);
   visibility: hidden;
-  /* transition: 0.5s; */
+  /* transition:all 4s ease-in-out; */
 }
 
 #pop-up.active{
   top: 50%;
   visibility: visible;
   transition: 1s;
+  transition: width 2s, height 2s, transform 2s;
 }
 .pop-up>h2{
   color: #ffffff;
 }
+
