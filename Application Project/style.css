@@ -4,7 +4,7 @@
   color: rgb(207, 210, 218);
 }
 body{
-  /* display: flex; */
+
   background-image: url(./background.jpg);
   background-size: cover;
   height: 100vh;
@@ -45,21 +45,22 @@ input , select {
     border: 1px solid #0f123062;
     box-shadow: 0 4px 5px black;
     position: absolute;
-    left: 5px;
-    top: 5px;
-    right: 5px;
+    left: 0;
+    top: 3px;
+    right: 20;
     display: flex;
     justify-content: flex-end;
-    height: fit-content;
-    width: 99%;
-    margin: auto;
-    margin: 5px 0;
+    height: 60px;
+    width: 99.5%;
   
   }
 
   .logout{
     width: fit-content;
     margin: 5px;
+    height: 80%;
+    align-items: center;
+    vertical-align: center;
   }
     
  .imgcontainer {
@@ -88,6 +89,7 @@ input , select {
     display: flex;
     flex-direction: column;
     position: relative;
+    top: 10%;
     justify-content: center;
     padding: 10px 10px 5px 10px;
     background:#001a4ba4;
@@ -131,7 +133,16 @@ a{
   transition: 1s;
   transition: width 2s, height 2s, transform 2s;
 }
+
 .pop-up>h2{
   color: #ffffff;
 }
 
+#teams{
+ border: 2px solid black;
+ align-items: center;
+ position: absolute;
+ top: 150px;
+ width: 95%;
+ height: fit-content;
+}

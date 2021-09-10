@@ -11,12 +11,14 @@
     #popUpButtons{
         display: flex;
         flex-direction: row;
-        justify-content: space-around;       
+        justify-content: space-around;
+        
     }
     #popUpButtons button{
         padding:  20px 30px;
     width: inherit;
 }
+
 </style>
 </head>
 
@@ -29,40 +31,19 @@
     <div class="header" id="blur">
         <button class="logout" onclick="Common.logoutUser()">Logout</button>
     </div>
-   
-   <!-- set the main Container -->
-    <div class="main-container" style="width: 70%;">
-        <h1 style="font-size: 3em; position:relative; text-align: center; " id="wellcome"></h1>
-        <table>
-            <tr>
-                <th colspan="2">
-                    <h1>
-                        Teams you own: <script> document.write( Common.getData("team").teamName) </script>
-                    </h1>
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    <h3 id="teamCategoryToShow">
-                        Category :
-                    </h3>
-                </td>
-            </tr>
-            <tr>
-                <td id="teamMembersToShow">
-                    <solid>Members : </solid>
-                </td>
-            </tr>
-        </table>
+    
+   <h1 style="font-size: 2em; position:relative; text-align: center; position: absolute; top: 70px; width: 98%;">Teams you own</h1>
+   <!-- set the Teams -->
+    <div id="teams">
 
-        
-               <div style="width: 25%">
-                    <a href="JavaScript:void(0)"  onclick="toogle()">
-                        <button>Add Team</button>
-                    </a>
-               </div>
     </div>
        
+    <div style="width: 20%; position: absolute; bottom: 5%; right: 5%;">
+        <a href="JavaScript:void(0)"  onclick="toogle()">
+            <button>Add Team</button>
+        </a>
+   </div>
+
 </div>
 
 <div id="pop-up">

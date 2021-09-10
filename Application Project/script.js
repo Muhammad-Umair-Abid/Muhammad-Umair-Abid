@@ -63,6 +63,7 @@ if(user){
 if(authentefication){
 
        let members = Common.getData("members")
+       user.team_owner += 1
        members.push(user)
        Common.saveData("members", members)
         userName =""
@@ -163,11 +164,11 @@ let saveTeam = () => {
 // let dataOfTeam = document.getElementById("wellcome")
 
 
-let teamCategoryToShow = document.getElementById("teamCategoryToShow").innerHTML
+// let teamCategoryToShow = document.getElementById("teamCategoryToShow").innerHTML
 
-let teamMembersToShow = document.getElementById("teamMembersToShow").innerHTML
+// let teamMembersToShow = document.getElementById("teamMembersToShow").innerHTML
 
-let getUserData = Common.getData("team")
+// let getUserData = Common.getData("team")
 
 
 document.getElementById("teamCategoryToShow").innerHTML += getUserData.teamCategory
