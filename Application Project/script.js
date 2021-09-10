@@ -7,6 +7,14 @@ class User{
     };
 }
 
+class Team{
+    constructor(teamName,teamCategory,teamMembers){
+        this.teamName = teamName ;
+        this.teamCategory = teamCategory ;
+        this.teamMembers = teamMembers 
+    }
+}
+
 let uEmail 
 let uPass
 let uName
@@ -96,6 +104,7 @@ for(var i = 0 ; i < data.length ; i++){
 if(eMailfound){
     if(user.email === signInEmail && user.password === signInPass){
         Common.saveData('loggedUser', user);
+
         window.location.href="./Web/home_page.html"
 
     } else {
@@ -122,12 +131,53 @@ document.getElementById("wellcome").innerHTML = wellcome
 
 function toogle () {
     let blur = document.getElementById("blur")
-    console.log(blur)
+    // console.log(blur)
     blur.classList.toggle("active")
     
     let popUp = document.getElementById("pop-up")
-    console.log(popUp)
+    // console.log(popUp)
     popUp.classList.toggle("active")
 }
+
+let saveTeam = () => {
+    let team = {}
+    let tName = document.getElementById("teamName").value
+    let tCategory = document.getElementById("teamCategory").value
+    let tMembers =  document.getElementById("teamMembers").value
+
+    if(tName !== "" && tCategory !== "" && tMembers !== ""){
+     team = new Team(tName,tCategory,tMembers)
+    } else {
+        alert("Please Fill the Feilds Correctly")
+    }
+    console.log(teamName,teamCategory,teamMembers)
+
+    console.log(team)
+
+    if(team){
+        Common.saveData("team" , team)
+    return toogle()
+}
+}
+
+// let dataOfTeam = document.getElementById("wellcome")
+
+
+let teamCategoryToShow = document.getElementById("teamCategoryToShow").innerHTML
+
+let teamMembersToShow = document.getElementById("teamMembersToShow").innerHTML
+
+let getUserData = Common.getData("team")
+
+
+document.getElementById("teamCategoryToShow").innerHTML += getUserData.teamCategory
+document.getElementById("teamMembersToShow").innerHTML += getUserData.teamMembers
+
+// console.log(getUserData)
+// console.log(teamMembersToShow)
+console.log(teamCategoryToShow)
+
+{/* <solid>Members : </solid> */}
+
 
 

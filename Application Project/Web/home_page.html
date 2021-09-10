@@ -33,6 +33,29 @@
    <!-- set the main Container -->
     <div class="main-container" style="width: 70%;">
         <h1 style="font-size: 3em; position:relative; text-align: center; " id="wellcome"></h1>
+        <table>
+            <tr>
+                <th colspan="2">
+                    <h1>
+                        Teams you own: <script> document.write( Common.getData("team").teamName) </script>
+                    </h1>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <h3 id="teamCategoryToShow">
+                        Category :
+                    </h3>
+                </td>
+            </tr>
+            <tr>
+                <td id="teamMembersToShow">
+                    <solid>Members : </solid>
+                </td>
+            </tr>
+        </table>
+
+        
                <div style="width: 25%">
                     <a href="JavaScript:void(0)"  onclick="toogle()">
                         <button>Add Team</button>
@@ -43,21 +66,27 @@
 </div>
 
 <div id="pop-up">
+
     <h2 style="font-size: 2em; position:relative; text-align: center;" >Create a new Team</h2>
-    <input id="teamName" type="text" placeholder="Team Name" name="team">
-    <select name="team" id="teamCatagory">
+<form action="javaScript:void(0)">
+    <input id="teamName" type="text" placeholder="Team Name" name="team" required>
+    <select name="team" id="teamCategory" required>
         <option disabled selected hidden>Select your Team</option>
-        <option value="contentCreator">Content Creator</option>
-        <option value="uiDesigner">UI Designer</option>
-        <option value="appDeveloper">App Developer</option>
+        <option value="Content Creator">Content Creator</option>
+        <option value="UI Designer">UI Designer</option>
+        <option value="app Developer">App Developer</option>
+        <option value="Mintenance Team">Maintenance Team</option>
     </select>
-    <input id="teamMembers" type="text" placeholder="Members (type email)" name="team"> 
+    <input id="teamMembers" type="email" placeholder="Members (type email)" name="team" required> 
+
+</form>
     <div id="popUpButtons">
         <button onclick="saveTeam()">Save</button>
         <a href="JavaScript:void(0)"  onclick="toogle()">
         <button>Close</button>
         </a>
    </div>
+
 </div>
     
 
