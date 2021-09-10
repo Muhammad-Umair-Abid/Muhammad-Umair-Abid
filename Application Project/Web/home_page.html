@@ -18,6 +18,12 @@
         padding:  20px 30px;
     width: inherit;
 }
+.miniButton{
+    font-size: 15px;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+}
 
 </style>
 </head>
@@ -32,10 +38,18 @@
         <button class="logout" onclick="Common.logoutUser()">Logout</button>
     </div>
     
-   <h1 style="font-size: 2em; position:relative; text-align: center; position: absolute; top: 70px; width: 98%;">Teams you own</h1>
+   <h1 style="font-size: 2em; position:relative; text-align: center; position: absolute; top: 70px; width: 98%; text-shadow:  0 2px 10px black;">Teams you own</h1>
    <!-- set the Teams -->
     <div id="teams">
-
+        <div id="buttonBox" style="width: fit-content; height: fit-content;" >
+            <button class="miniButton">
+                Add Members
+            </button>
+            <button class="miniButton">
+                Remove Team
+            </button>
+        </div>
+        
     </div>
        
     <div style="width: 20%; position: absolute; bottom: 5%; right: 5%;">
@@ -55,14 +69,14 @@
         <option disabled selected hidden>Select your Team</option>
         <option value="Content Creator">Content Creator</option>
         <option value="UI Designer">UI Designer</option>
-        <option value="app Developer">App Developer</option>
+        <option value="App Developer">App Developer</option>
         <option value="Mintenance Team">Maintenance Team</option>
     </select>
     <input id="teamMembers" type="email" placeholder="Members (type email)" name="team" required> 
 
 </form>
     <div id="popUpButtons">
-        <button onclick="saveTeam()">Save</button>
+        <button onclick="saveTeam()" >Save</button>
         <a href="JavaScript:void(0)"  onclick="toogle()">
         <button>Close</button>
         </a>

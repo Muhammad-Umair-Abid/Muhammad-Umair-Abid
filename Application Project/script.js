@@ -140,73 +140,77 @@ function toogle () {
 // "Adding Teams"
 
 
-let saveTeam = () => {
-    let team = Common.getData("team")
-    let addTeam
 
-    let tName = document.getElementById("teamName").value
-    let tCategory = document.getElementById("teamCategory").value
-    let tMembers =  document.getElementById("teamMembers").value
-   
-// Making an Object of Team
+    let saveTeam = () => {
+        let team = Common.getData("team")
+        let addTeam
 
-    if(tName && tCategory && tMembers){
+        let tName = document.getElementById("teamName").value
+        let tCategory = document.getElementById("teamCategory").value
+        let tMembers =  document.getElementById("teamMembers").value
+    
+    // Making an Object of Team
 
-        addTeam = new Team(tName,tCategory,tMembers);
+        if(tName && tCategory && tMembers){
 
-        // console.log(addTeam)
-    } else {
-        alert("Please Fill the Feilds Correctly")
-    } // At that point we sucessfully made an Object
+            addTeam = new Team(tName,tCategory,tMembers);
+
+            // console.log(addTeam)
+        } else {
+            alert("Please Fill the Feilds Correctly")
+        } // At that point we sucessfully made an Object
 
 
-// Now see the data to update the Team
+    // Now see the data to update the Team
 
-    if(team.length === 0){
-
-        team.push(addTeam)
-        Common.saveData("team" , team)
-
-        document.getElementById("teamName").value = ""
-        // document.getElementById("teamCategory").value = ""
-        document.getElementById("teamMembers").value = ""
-        
-        // console.log(team);
-        return toogle();
-
-    } else{
-        
-// //  now Check if the team is already Available
-
-    for ( i = 0 ; i <= team.length ; i++){
-        
-        console.log(`finding in ${i}`)
-        
-        if(team[i].teamName !== tName) {
+        if(team.length === 0){
 
             team.push(addTeam)
-
             Common.saveData("team" , team)
 
             document.getElementById("teamName").value = ""
             // document.getElementById("teamCategory").value = ""
             document.getElementById("teamMembers").value = ""
+            
+            alert("New Team Added")
 
+            showData(addTeam.teamCategory , addTeam.teamMembers)
             return toogle();
 
-        } else {
-            alert ("This Team in already available")
-        }
-    }
-    } 
+        } else{
+            
+    // //  now Check if the team is already Available
 
-    let teamToShow = Common.getData("team")
-    let teamCategoryToShow = addTeam.teamCategory
-    let h2 = document.createElement("h2");
-    let text = document.createTextNode(`${teamCategoryToShow}`)
-    h2.appendChild(text);
-    document.getElementById("teams").appendChild(h2);
+            for ( i = 0 ; i <= team.length ; i++){
+                
+                console.log(`finding in ${i}`)
+                
+                if(team[i].teamName !== tName) {
+
+                    team.push(addTeam)
+
+                    Common.saveData("team" , team)
+
+                    document.getElementById("teamName").value = ""
+                    // document.getElementById("teamCategory").value = ""
+                    document.getElementById("teamMembers").value = ""
+                    
+                    alert("New Team Added")
+                    showData(addTeam.teamCategory , addTeam.teamMembers)
+                    return toogle();
+
+                } else {
+                    alert ("This Team in already available")
+                }
+            }
+            }             
 }
 
+let showData = (categoryToShow , membersToShow) => {
+    console.log(categoryToShow)
+    let div1 = document.createElement('div')
+    div1.innerHTML = `<p style="font-size: 1em; color: white;"> Category : ${categoryToShow}</p> <br> Members : ${membersToShow}`
+    document.getElementById("teams").appendChild(div1)
 
+}
 

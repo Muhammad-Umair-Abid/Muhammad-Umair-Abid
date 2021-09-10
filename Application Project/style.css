@@ -138,11 +138,19 @@ a{
   color: #ffffff;
 }
 
-#teams{
- border: 2px solid black;
+#teams {
+  display: block;
+  margin-top: 3px ;
+ /* border: 2px solid black; */
  align-items: center;
  position: absolute;
  top: 150px;
  width: 95%;
  height: fit-content;
+}
+
+#teams>div{
+  padding: 10px;
+  border: 2px solid black;
+  margin: 5px 0;
 }
