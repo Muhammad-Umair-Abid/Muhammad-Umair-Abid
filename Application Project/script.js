@@ -209,7 +209,7 @@ function toogle () {
 let showData = (categoryToShow , membersToShow) => {
     console.log(categoryToShow)
     let div1 = document.createElement('div')
-    div1.innerHTML = `<p style="font-size: 1em; color: white;"> Category : ${categoryToShow}</p> <br> Members : ${membersToShow}`
+    div1.innerHTML = `<p style="font-size: 1em; color: white;"> Category : ${categoryToShow}</p> <br> Members : ${membersToShow} <br> `
     document.getElementById("teams").appendChild(div1)
 
 }
