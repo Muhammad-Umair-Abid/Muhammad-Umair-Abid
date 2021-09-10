@@ -37,7 +37,7 @@ if (userName !== "" && userEmail !== "" && userPass !== ""){
 }
 
 
-let authentefication = false
+let authentication = false
 
 
 if(user){
@@ -53,14 +53,14 @@ if(user){
         let dataBase = Common.getData("members")
         for(var j = 0 ; j < Common.getData("members").length; j++){
             if(!(userName === dataBase[j].name || dataBase[j].email === userEmail)) {
-                authentefication = true
+                authentication = true
             } else {
                 alert("User-name or email already Exist")
             }
         }
     }
 }
-if(authentefication){
+if(authentication){
 
        let members = Common.getData("members")
        user.team_owner += 1
@@ -90,7 +90,7 @@ let eMailfound  = false
 let user        = {};
 for(var i = 0 ; i < data.length ; i++){
 
-   console.log(`Finding in ${i}`)
+//    console.log(`Finding in ${i}`)
    
     if (data[i].email === signInEmail) {
         user.email      = data[i].email
@@ -116,18 +116,12 @@ if(eMailfound){
 }
 }
 
-// Now get data for home page
 
 
-
-let wellcome = document.getElementById("wellcome");
 let LoggedUserData = Common.getData("loggedUser")
 
-let userNmae = LoggedUserData.name.toUpperCase();
+console.log(LoggedUserData)
 
-wellcome = `Wellcome: ${userNmae} `
-
-document.getElementById("wellcome").innerHTML = wellcome
 
 
 function toogle () {
@@ -140,45 +134,79 @@ function toogle () {
     popUp.classList.toggle("active")
 }
 
+
+
+
+// "Adding Teams"
+
+
 let saveTeam = () => {
-    let team = {}
+    let team = Common.getData("team")
+    let addTeam
+
     let tName = document.getElementById("teamName").value
     let tCategory = document.getElementById("teamCategory").value
     let tMembers =  document.getElementById("teamMembers").value
+   
+// Making an Object of Team
 
-    if(tName !== "" && tCategory !== "" && tMembers !== ""){
-     team = new Team(tName,tCategory,tMembers)
+    if(tName && tCategory && tMembers){
+
+        addTeam = new Team(tName,tCategory,tMembers);
+
+        // console.log(addTeam)
     } else {
         alert("Please Fill the Feilds Correctly")
-    }
-    console.log(teamName,teamCategory,teamMembers)
+    } // At that point we sucessfully made an Object
 
-    console.log(team)
 
-    if(team){
+// Now see the data to update the Team
+
+    if(team.length === 0){
+
+        team.push(addTeam)
         Common.saveData("team" , team)
-    return toogle()
+
+        document.getElementById("teamName").value = ""
+        // document.getElementById("teamCategory").value = ""
+        document.getElementById("teamMembers").value = ""
+        
+        // console.log(team);
+        return toogle();
+
+    } else{
+        
+// //  now Check if the team is already Available
+
+    for ( i = 0 ; i <= team.length ; i++){
+        
+        console.log(`finding in ${i}`)
+        
+        if(team[i].teamName !== tName) {
+
+            team.push(addTeam)
+
+            Common.saveData("team" , team)
+
+            document.getElementById("teamName").value = ""
+            // document.getElementById("teamCategory").value = ""
+            document.getElementById("teamMembers").value = ""
+
+            return toogle();
+
+        } else {
+            alert ("This Team in already available")
+        }
+    }
+    } 
+
+    let teamToShow = Common.getData("team")
+    let teamCategoryToShow = addTeam.teamCategory
+    let h2 = document.createElement("h2");
+    let text = document.createTextNode(`${teamCategoryToShow}`)
+    h2.appendChild(text);
+    document.getElementById("teams").appendChild(h2);
 }
-}
-
-// let dataOfTeam = document.getElementById("wellcome")
-
-
-// let teamCategoryToShow = document.getElementById("teamCategoryToShow").innerHTML
-
-// let teamMembersToShow = document.getElementById("teamMembersToShow").innerHTML
-
-// let getUserData = Common.getData("team")
-
-
-document.getElementById("teamCategoryToShow").innerHTML += getUserData.teamCategory
-document.getElementById("teamMembersToShow").innerHTML += getUserData.teamMembers
-
-// console.log(getUserData)
-// console.log(teamMembersToShow)
-console.log(teamCategoryToShow)
-
-{/* <solid>Members : </solid> */}
 
 
 
