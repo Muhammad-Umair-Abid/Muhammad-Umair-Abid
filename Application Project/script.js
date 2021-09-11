@@ -172,7 +172,7 @@ function toogle () {
             // document.getElementById("teamCategory").value = ""
             document.getElementById("teamMembers").value = ""
             
-            alert("New Team Added")
+            alert("New Team Added 'please refresh to update'")
 
             // showData(addTeam.teamCategory , addTeam.teamMembers)
             return toogle();
@@ -195,7 +195,7 @@ function toogle () {
                     // document.getElementById("teamCategory").value = ""
                     document.getElementById("teamMembers").value = ""
                     
-                    alert("New Team Added")
+                    alert("New Team Added 'please refresh to update'")
                     // showData(addTeam.teamCategory , addTeam.teamMembers)
                     return toogle();
 
@@ -216,18 +216,25 @@ function toogle () {
 
 // }
 
-for (var k= 0 ; k < Common.getData('team').length; k++) {
-    console.log(Common.getData('team')[k].teamCategory)
 
-    let dataToShow = Common.getData('team')[k]
+for (var k= 0 ; k < Common.getData('team').length; k++) {
+
+    let dataToShow = Common.getData('team')[k];
     let showTeamCategory = dataToShow.teamCategory
     let showTeamMembers = dataToShow.teamMembers
 
-    console.log(showTeamMembers)
+    // console.log(dataToShow)
 
     let div1 = document.createElement('div')
-    div1.innerHTML = `<p style="font-size: 1em; color: white;"> Category : ${showTeamCategory}</p> <br> Members : ${showTeamMembers} <br> <div id="buttonBox" style="width: fit-content; height: fit-content;"><button class="miniButton">Add Members</button><button class="miniButton">Remove Team</button></div> `
-
+    div1.innerHTML = `<p style="font-size: 1em; color: white;"> Category : ${showTeamCategory}</p> <br> Members : ${showTeamMembers} <br> <div id="buttonBox" style="width: fit-content; height: fit-content;"><button class="miniButton" id="addMmbers" >Add Members</button><button class="miniButton , removeTeam" onclick="removeTeam()">Remove Team</button></div> `
+ 
     document.getElementById("teams").appendChild(div1)
+
+    let teamToRemove = document.getElementsByClassName('removeTeam')[k]
+    console.log(teamToRemove)
 }
 
+
+let removeTeam = ()=>{
+    return
+}
