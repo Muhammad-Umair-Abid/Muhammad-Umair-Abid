@@ -174,7 +174,7 @@ function toogle () {
             
             alert("New Team Added")
 
-            showData(addTeam.teamCategory , addTeam.teamMembers)
+            // showData(addTeam.teamCategory , addTeam.teamMembers)
             return toogle();
 
         } else{
@@ -196,7 +196,7 @@ function toogle () {
                     document.getElementById("teamMembers").value = ""
                     
                     alert("New Team Added")
-                    showData(addTeam.teamCategory , addTeam.teamMembers)
+                    // showData(addTeam.teamCategory , addTeam.teamMembers)
                     return toogle();
 
                 } else {
@@ -206,11 +206,28 @@ function toogle () {
             }             
 }
 
-let showData = (categoryToShow , membersToShow) => {
-    console.log(categoryToShow)
-    let div1 = document.createElement('div')
-    div1.innerHTML = `<p style="font-size: 1em; color: white;"> Category : ${categoryToShow}</p> <br> Members : ${membersToShow} <br> `
-    document.getElementById("teams").appendChild(div1)
 
+// let showData = (categoryToShow , membersToShow) => {
+//     console.log(categoryToShow)
+//     let div1 = document.createElement('div')
+//     div1.innerHTML = `<p style="font-size: 1em; color: white;"> Category : ${categoryToShow}</p> <br> Members : ${membersToShow} <br> <div id="buttonBox" style="width: fit-content; height: fit-content;"><button class="miniButton">Add Members</button><button class="miniButton">Remove Team</button></div> `
+    
+//     document.getElementById("teams").appendChild(div1)
+
+// }
+
+for (var k= 0 ; k < Common.getData('team').length; k++) {
+    console.log(Common.getData('team')[k].teamCategory)
+
+    let dataToShow = Common.getData('team')[k]
+    let showTeamCategory = dataToShow.teamCategory
+    let showTeamMembers = dataToShow.teamMembers
+
+    console.log(showTeamMembers)
+
+    let div1 = document.createElement('div')
+    div1.innerHTML = `<p style="font-size: 1em; color: white;"> Category : ${showTeamCategory}</p> <br> Members : ${showTeamMembers} <br> <div id="buttonBox" style="width: fit-content; height: fit-content;"><button class="miniButton">Add Members</button><button class="miniButton">Remove Team</button></div> `
+
+    document.getElementById("teams").appendChild(div1)
 }
 
