@@ -30,7 +30,7 @@
 </head>
 
 
-<body onclick="removeTeam()">
+<body>
 
 <div class="container" id="blur" style="height: 100vh; display:flex;">
         
@@ -81,7 +81,8 @@
 
   <script src="../script.js"></script>
   <script type="text/javascript">
-
+      //on first load of the page
+      refreshTeams();
 
         if(!Common.isUserLoggedIn()){
             window.location.href="../signInPage.html"

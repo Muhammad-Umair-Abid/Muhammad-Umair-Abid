@@ -11,9 +11,12 @@ class Team{
     constructor(teamName,teamCategory,teamMembers){
         this.teamName = teamName ;
         this.teamCategory = teamCategory ;
-        this.teamMembers = teamMembers 
+        this.teamMembers = teamMembers
+         
     }
 }
+
+
 
 let uEmail 
 let uPass
@@ -171,70 +174,53 @@ function toogle () {
             document.getElementById("teamName").value = ""
             // document.getElementById("teamCategory").value = ""
             document.getElementById("teamMembers").value = ""
-            
-            alert("New Team Added 'please refresh to update'")
 
             // showData(addTeam.teamCategory , addTeam.teamMembers)
-            return toogle();
 
         } else{
             
-    // //  now Check if the team is already Available
+            // //  now Check if the team is already Available
 
-            for ( i = 0 ; i <= team.length ; i++){
-                
-                console.log(`finding in ${i}`)
-                
-                if(team[i].teamName !== tName) {
-
-                    team.push(addTeam)
-
-                    Common.saveData("team" , team)
-
-                    document.getElementById("teamName").value = ""
-                    // document.getElementById("teamCategory").value = ""
-                    document.getElementById("teamMembers").value = ""
-                    
-                    alert("New Team Added 'please refresh to update'")
-                    // showData(addTeam.teamCategory , addTeam.teamMembers)
-                    return toogle();
-
-                } else {
-                    alert ("This Team in already available")
-                }
+            if (team.find((value, index) => value.teamName === tName)){
+                alert ("This Team in already available")
+                return false;
             }
-            }             
+
+            team.push(addTeam)
+
+            Common.saveData("team" , team)
+
+            document.getElementById("teamName").value = ""
+            // document.getElementById("teamCategory").value = ""
+            document.getElementById("teamMembers").value = ""
+            // showData(addTeam.teamCategory , addTeam.teamMembers)
+        }
+
+        toogle();
+        refreshTeams();
+    }
+
+function refreshTeams(){
+    let row = '';
+    document.getElementById("teams").innerHTML = row;
+    for (var k= 0 ; k < Common.getData('team').length; k++) {
+
+        let dataToShow = Common.getData('team')[k];
+        let showTeamCategory = dataToShow.teamCategory
+        let showTeamMembers = dataToShow.teamMembers
+        row += `<div> <p style="font-size: 1em; color: white;">Category : ${showTeamCategory}</p><br/> Members : ${showTeamMembers}<br/> <div style="width: fit-content; height: fit-content;"><button class="miniButton" id="addMmbers">Add Members</button><button data-index="${k}" class="miniButton , removeTeam" onclick="removeTeam(this)">Remove Team</button></div></div> `
+    }
+    document.getElementById("teams").innerHTML = row;
 }
 
+// `` ""
 
-// let showData = (categoryToShow , membersToShow) => {
-//     console.log(categoryToShow)
-//     let div1 = document.createElement('div')
-//     div1.innerHTML = `<p style="font-size: 1em; color: white;"> Category : ${categoryToShow}</p> <br> Members : ${membersToShow} <br> <div id="buttonBox" style="width: fit-content; height: fit-content;"><button class="miniButton">Add Members</button><button class="miniButton">Remove Team</button></div> `
-    
-//     document.getElementById("teams").appendChild(div1)
-
-// }
-
-
-for (var k= 0 ; k < Common.getData('team').length; k++) {
-
-    let dataToShow = Common.getData('team')[k];
-    let showTeamCategory = dataToShow.teamCategory
-    let showTeamMembers = dataToShow.teamMembers
-
-    // console.log(dataToShow)
-
-    let div1 = document.createElement('div')
-    div1.innerHTML = `<p style="font-size: 1em; color: white;"> Category : ${showTeamCategory}</p> <br> Members : ${showTeamMembers} <br> <div id="buttonBox" style="width: fit-content; height: fit-content;"><button class="miniButton" id="addMmbers" >Add Members</button><button class="miniButton , removeTeam" onclick="removeTeam()">Remove Team</button></div> `
- 
-    document.getElementById("teams").appendChild(div1)
-
-    let teamToRemove = document.getElementsByClassName('removeTeam')[k]
-    console.log(teamToRemove)
+function removeTeam(_button){
+    teams = Common.getData('team');
+    if (teams){
+        teams.splice(_button.getAttribute('data-index'), 1);
+        Common.saveData('team', teams);
+        refreshTeams();
+    }
 }
 
-
-let removeTeam = ()=>{
-    return
-}
