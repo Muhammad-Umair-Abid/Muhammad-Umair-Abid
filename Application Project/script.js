@@ -1,9 +1,10 @@
 class User{
     constructor(userName,userEmail,userPass) {
-        this.name       = userName;
-        this.email      = userEmail;
-        this.password   = userPass
-        this.team_owner = 0
+        this.name           = userName;
+        this.email          = userEmail;
+        this.password       = userPass
+        this.team_owner     = 0
+        this.teamMembers    = [] 
     };
 }
 
@@ -208,7 +209,7 @@ function refreshTeams(){
         let dataToShow = Common.getData('team')[k];
         let showTeamCategory = dataToShow.teamCategory
         let showTeamMembers = dataToShow.teamMembers
-        row += `<div> <p style="font-size: 1em; color: white;">Category : ${showTeamCategory}</p><br/> Members : ${showTeamMembers}<br/> <div style="width: fit-content; height: fit-content;"><button class="miniButton" id="addMmbers">Add Members</button><button data-index="${k}" class="miniButton , removeTeam" onclick="removeTeam(this)">Remove Team</button></div></div> `
+        row += `<div> <p style="font-size: 1em; color: white;">Category : ${showTeamCategory}</p><br/> Members : ${showTeamMembers}<br/> <div style="width: fit-content; height: fit-content;"><button class="miniButton" >Add Members</button><button data-index="${k}" class="miniButton , removeTeam" onclick="removeTeam(this)">Remove Team</button></div></div> `
     }
     document.getElementById("teams").innerHTML = row;
 }

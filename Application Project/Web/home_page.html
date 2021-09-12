@@ -46,7 +46,7 @@
         
     </div>
        
-    <div style="width: 20%; position: absolute; bottom: 5%; right: 5%;">
+    <div style="width: 20%; position:fixed; bottom: 5%; right: 5%;">
         <a href="JavaScript:void(0)"  onclick="toogle()">
             <button>Add Team</button>
         </a>
@@ -81,8 +81,7 @@
 
   <script src="../script.js"></script>
   <script type="text/javascript">
-      //on first load of the page
-      refreshTeams();
+
 
         if(!Common.isUserLoggedIn()){
             window.location.href="../signInPage.html"
