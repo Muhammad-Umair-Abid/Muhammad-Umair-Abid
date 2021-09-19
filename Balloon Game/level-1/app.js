@@ -10,15 +10,17 @@ const firebaseConfig = {
            // Initializing Firebase
       
     firebase.initializeApp(firebaseConfig);
-   const auth = firebase.auth()
 
+
+   const auth = firebase.auth();
+//    var database = firebase.database();
 
 function signup() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     console.log(email, password);
     
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    auth.createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Signed in Sucessful 
             var LoggedUser = userCredential.user;
@@ -61,10 +63,9 @@ function login() {
 
 function logout() {
 
-    // console.log('user logged out')
 
     firebase.auth().signOut().then(() => {
-        // Sign-out successful.
+        
         window.location.href= "./index.html"
     }).catch((error) => {
         // An error happened.
@@ -72,4 +73,18 @@ function logout() {
 }
 
 
-
+// auth.onAuthStateChanged((user) => {
+//     console.log(user)
+//     if (user) {
+//         database.ref('users').doc(user.uid).set({
+//             email: user.email,
+//             lastLoggedInAt: new Date()
+//         })
+//             .then(() => {
+//                 console.log("Document written");
+//             })
+//             .catch((error) => {
+//                 console.error("Error adding document: ", error);
+//             });
+//         }
+//     })
