@@ -73,7 +73,6 @@ function logout() {
 }
 
 
-
 onload = function(){
     var parent = document.getElementById("shuffle");
     var frag = document.createDocumentFragment();
@@ -81,4 +80,6 @@ onload = function(){
         frag.appendChild(parent.children[Math.floor(Math.random() * parent.children.length)]);
     }
     parent.appendChild(frag);
-};
+}
+
+setInterval( onload() , 3000);
