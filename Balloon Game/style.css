@@ -1,0 +1,120 @@
+*{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+
+  }
+
+
+  input {
+    color: black;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    border: 2px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px black;
+  }
+  
+  button {
+    background-color: #282c2b;
+    padding: 14px 20px;
+    color: white;
+    margin: 8px 0;
+    margin-top: 15px;
+    border: none;
+    width: fit-content;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px black;
+  }
+
+  #registration{
+      width: 40%;
+      margin: auto;
+  }
+
+  #buttons{
+      display: flex;
+      justify-content: space-around;
+  }
+
+  
+  #header{
+    background-color: rgba(10, 10, 10, 0.705);
+    border: 1px solid #0f123062;
+    box-shadow: 0 4px 5px black;
+    position: absolute;
+    left: 0;
+    top: 3px;
+    right: 20;
+    display: flex;
+    justify-content: flex-end;
+    height: 60px;
+    width: 99.5%;
+  
+  }
+
+  .logout{
+    width: fit-content;
+    margin: 5px;
+    height: 80%;
+    align-items: center;
+    vertical-align: center;
+  }
+
+
+  .container{
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      margin-top: 5%;
+      /* box-shadow: 2px 2px 3px black; */
+      text-align: center;
+      height: 80%;
+      width: fit-content;
+      align-items: center;
+  }
+
+  #score_card{
+    box-shadow: 0px 0px 5px black;
+    width: 20%;
+    position: absolute;
+    right: 10%;      
+    top: 50%;
+  }
+    .balloons_box{    
+        padding-top: 20px;
+        box-shadow: 2px 2px 3px black;
+        display: flex;
+        flex-wrap: wrap;
+        width: 35%;
+        align-items: center;
+        justify-content: center;
+      
+  }
+    
+
+  .balloons_box> .balloon{
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid black;
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+  }
+
+  .balloons_box> .red{
+      background-color: red;
+  }
+  
+  .balloons_box> .green{
+      background-color: green;
+  }
+
+.balloons_box> .blue{
+      background-color: blue;
+  }
+  
+  
+.balloons_box> .yellow{
+    background-color: yellow;
+}
