@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./style.css">
 
 </head>
-<body>
+<body onload="onload()">
     <div id="header">
             <button class="logout" onclick="logout()">Logout</button>
     </div>
@@ -20,7 +20,7 @@
 
         <div class="instructions" style="position: absolute; left: 10px; top: 50%; font-family: Arial, Helvetica, sans-serif; color: brown; width: 30%;">
             <h2 style="font-size: 20px;">
-                Pop all the yellow Balloons:
+                Pop all the Red Balloons:
             </h2>
             <br>
             <h1 style="font-size: 30px;">
@@ -37,20 +37,20 @@
                 <span id="lives">3</span>
             </h1>
         </div>
-        <div class="balloons_box">
-            <div class="red balloon" onmouseover="pop(this)"></div>
-            <div class="green balloon" onmouseover="pop(this)"></div>
+        <div class="balloons_box" id="Shuffle">
             <div class="blue balloon" onmouseover="pop(this)"></div>
             <div class="red balloon" onmouseover="pop(this)"></div>
+            <div class="blue balloon" onmouseover="pop(this)"></div>
             <div class="green balloon" onmouseover="pop(this)"></div>
-            <div class="yellow balloon" onmouseover="pop(this)"></div>
             <div class="red balloon" onmouseover="pop(this)"></div>
-            <div class="green blue balloon" onmouseover="pop(this)"></div>
             <div class="yellow balloon" onmouseover="pop(this)"></div>
             <div class="green balloon" onmouseover="pop(this)"></div>
             <div class="blue balloon" onmouseover="pop(this)"></div>
+            <div class="red balloon" onmouseover="pop(this)"></div>
             <div class="green balloon" onmouseover="pop(this)"></div>
             <div class="blue balloon" onmouseover="pop(this)"></div>
+            <div class="green balloon" onmouseover="pop(this)"></div>
+            <div class="yellow balloon" onmouseover="pop(this)"></div>
             <div class="red balloon" onmouseover="pop(this)"></div>
             <div class="yellow balloon" onmouseover="pop(this)"></div>
             <div class="red balloon" onmouseover="pop(this)"></div>
@@ -78,7 +78,7 @@
             // console.log(getColor)
 
             if(getColor !== 'balloon' ){
-                if(getColor === 'yellow'){
+                if(getColor === 'red'){
 
                     balloon.innerHTML = "POP!!"
                     balloon.style.backgroundColor = "transparent";
@@ -92,7 +92,6 @@
                     
                     if(scores === 50) {
                         alert("You Win Heading to next Level")
-
                     }
 
                 } else {

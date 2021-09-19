@@ -73,18 +73,12 @@ function logout() {
 }
 
 
-// auth.onAuthStateChanged((user) => {
-//     console.log(user)
-//     if (user) {
-//         database.ref('users').doc(user.uid).set({
-//             email: user.email,
-//             lastLoggedInAt: new Date()
-//         })
-//             .then(() => {
-//                 console.log("Document written");
-//             })
-//             .catch((error) => {
-//                 console.error("Error adding document: ", error);
-//             });
-//         }
-//     })
+
+onload = function(){
+    var parent = document.getElementById("shuffle");
+    var frag = document.createDocumentFragment();
+    while (parent.children.length) {
+        frag.appendChild(parent.children[Math.floor(Math.random() * parent.children.length)]);
+    }
+    parent.appendChild(frag);
+};

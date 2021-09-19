@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./style.css">
 
 </head>
-<body>
+<body onload="onload()">
     <div id="header">
             <button class="logout" onclick="logout()">Logout</button>
     </div>
@@ -37,7 +37,7 @@
                 <span id="lives">3</span>
             </h1>
         </div>
-        <div class="balloons_box">
+        <div class="balloons_box" id="shuffle">
             <div class="red balloon" onmouseover="pop(this)"></div>
             <div class="green balloon" onmouseover="pop(this)"></div>
             <div class="blue balloon" onmouseover="pop(this)"></div>
@@ -92,7 +92,7 @@
                     
                     if(scores === 50) {
                         alert("You Win Heading to Second Level")
-
+                        window.location.href = '../level-2/level-2.html'
                     }
 
                 } else {
@@ -109,12 +109,7 @@
                         window.location.href = 'wellcome_page.html' 
                     }
                     
-                    // if(scores === 50) {
-                    //     alert("You Win")
-
-                    // }
-                    // console.log(` Scores ${scores} and Lives Remaining ${lives} `)
-                }
+                 }
                
             }
              else {
