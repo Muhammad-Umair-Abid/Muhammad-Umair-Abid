@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <div id="header">
+            <button class="logout" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="container" style="padding-top: 20px;">
+
+        <div class="instructions" style="position: absolute; left: 10px; top: 50%; font-family: Arial, Helvetica, sans-serif; color: brown; width: 30%;">
+            <h2 style="font-size: 20px;">
+                Pop all the yellow Balloons:
+            </h2>
+            <br>
+            <h1 style="font-size: 30px;">
+                POP THE BALLOONS BY MOVING YOUR MOUSE OVER THEM
+            </h1>
+        </div>
+        <div id="score_card">
+            <h1>
+                Your Scores are :
+                <span id="scores">0</span>
+            </h1>
+            <h1>
+                Lives remaining :
+                <span id="lives">3</span>
+            </h1>
+        </div>
+        <div class="balloons_box">
+            <div class="red balloon" onmouseover="pop(this)"></div>
+            <div class="green balloon" onmouseover="pop(this)"></div>
+            <div class="blue balloon" onmouseover="pop(this)"></div>
+            <div class="red balloon" onmouseover="pop(this)"></div>
+            <div class="green balloon" onmouseover="pop(this)"></div>
+            <div class="yellow balloon" onmouseover="pop(this)"></div>
+            <div class="red balloon" onmouseover="pop(this)"></div>
+            <div class="green blue balloon" onmouseover="pop(this)"></div>
+            <div class="yellow balloon" onmouseover="pop(this)"></div>
+            <div class="green balloon" onmouseover="pop(this)"></div>
+            <div class="blue balloon" onmouseover="pop(this)"></div>
+            <div class="green balloon" onmouseover="pop(this)"></div>
+            <div class="blue balloon" onmouseover="pop(this)"></div>
+            <div class="red balloon" onmouseover="pop(this)"></div>
+            <div class="yellow balloon" onmouseover="pop(this)"></div>
+            <div class="red balloon" onmouseover="pop(this)"></div>
+            <div class="yellow balloon" onmouseover="pop(this)"></div>
+            <div class="blue balloon" onmouseover="pop(this)"></div>
+            <div class="green balloon" onmouseover="pop(this)"></div>
+            <div class="yellow balloon" onmouseover="pop(this)"></div>
+
+        </div>
+        
+    </div>
+    <script>
+
+        let scores = +document.getElementById('scores').innerHTML;
+        let lives = +document.getElementById('lives').innerHTML;
+
+        console.log(scores,lives)
+
+
+        let pop = (balloon) => {
+
+            // console.log(balloon)
+            let getColor =  balloon.classList[0]
+
+            // console.log(getColor)
+
+            if(getColor !== 'balloon' ){
+                if(getColor === 'yellow'){
+
+                    balloon.innerHTML = "POP!!"
+                    balloon.style.backgroundColor = "transparent";
+                    balloon.style.border = 0
+                    balloon.classList = 'balloon'
+                
+                    scores += 10
+
+                    console.log(` Scores ${scores} and Lives Remaining ${lives} `)
+                    document.getElementById('scores').innerHTML = scores
+                    
+                    if(scores === 50) {
+                        alert("You Win Heading to next Level")
+
+                    }
+
+                } else {
+
+                    balloon.innerHTML = "POP!!"
+                    balloon.style.backgroundColor = "transparent";
+                    balloon.style.border = 0
+                    balloon.classList = 'balloon'
+                    --lives
+                    document.getElementById('lives').innerHTML = lives
+
+                    if(lives === 0 ){
+                        alert("Game Over")
+                        window.location.href = 'level-2.html' 
+                    }
+               }
+               
+            }
+             else {
+                console.log(` Scores ${scores} and Lives ${lives} `)
+            }
+
+        }
+    </script>
+    <script src="./app.js"></script>
+</body>
+</html>
