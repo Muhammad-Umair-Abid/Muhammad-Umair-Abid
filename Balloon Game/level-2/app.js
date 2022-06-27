@@ -12,54 +12,55 @@ const firebaseConfig = {
     firebase.initializeApp(firebaseConfig);
 
 
-   const auth = firebase.auth();
-//    var database = firebase.database();
+//    const auth = firebase.auth();
+// //    var database = firebase.database();
 
-function signup() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    console.log(email, password);
+// function signup() {
+//     const email = document.getElementById("email").value;
+//     const password = document.getElementById("password").value;
+//     console.log(email, password);
     
-    auth.createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Signed in Sucessful 
-            var LoggedUser = userCredential.user;
+//     auth.createUserWithEmailAndPassword(email, password)
+//         .then((userCredential) => {
+//             // Signed in Sucessful 
+//             var LoggedUser = userCredential.user;
             
-            window.location.href= "./wellcome_page.html"
+//             window.location.href= "./wellcome_page.html"
 
-            // document.getElementById('user').innerHTML = email
+//             // document.getElementById('user').innerHTML = email
 
-        })
-        .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            alert(errorMessage)
-        });
-}
-
-
-function login() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    console.log(email, password);
+//         })
+//         .catch((error) => {
+//             var errorCode = error.code;
+//             var errorMessage = error.message;
+//             alert(errorMessage)
+//         });
+// }
 
 
+// function login() {
+//     const email = document.getElementById("email").value;
+//     const password = document.getElementById("password").value;
+//     console.log(email, password);
 
- auth.signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Signed in Sucessful
-            const user = userCredential.user;
+
+
+//  auth.signInWithEmailAndPassword(email, password)
+//         .then((userCredential) => {
+//             // Signed in Sucessful
+//             const user = userCredential.user;
             
-            window.location.href= "./wellcome_page.html"
-            // document.getElementById('user').innerHTML = email
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorMessage)
-            alert(errorMessage);
-        });
-}
+//             window.location.href= "./wellcome_page.html"
+//             // document.getElementById('user').innerHTML = email
+//         })
+//         .catch((error) => {
+//             const errorCode = error.code;
+//             const errorMessage = error.message;
+//             console.log(errorMessage)
+//             alert(errorMessage);
+//         });
+// }
+
 
 function logout() {
 
@@ -68,6 +69,7 @@ function logout() {
         
         window.location.href= "./index.html"
     }).catch((error) => {
+        console.log(error)
         // An error happened.
     });
 }
@@ -82,4 +84,4 @@ onload = function(){
     parent.appendChild(frag);
 }
 
-setInterval( onload() , 3000);
+// setInterval( onload() , 3000);
