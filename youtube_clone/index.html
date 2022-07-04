@@ -5,29 +5,257 @@
 
     <title>YouTube</title>
 
+<link rel="icon" href="./Logo.png">
+
+
     <script src="https://kit.fontawesome.com/131ef56513.js" crossorigin="anonymous"></script>
+
+
+
+    <style>
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    position: absolute;
+    top: 20px;
+    left: 5%;
+    width: 94%;
+    height: 50px;
+    display: flex;
+    /* border-bottom: 1px solid grey; */
+
+}
+
+
+.left_option_bar{
+    width: 65px;
+    padding: 0 10px 0 0;
+    position: relative;
+
+}
+
+.left_option_bar>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+
+}
+
+.left_option_bar>div>img{
+    width: 25px;
+}
+
+.left_option_bar>div>p{
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+
+.left_option_bar>div{
+    padding: 20px 0 20px 0;
+}
+
+.left_option_bar>option{
+    margin-bottom: 200px;
+}
+
+.icon:hover{
+    box-shadow: 0 0 3px gray;
+}
+
+
+.header>.logo>img{
+    margin: 6px 0 0 20px;
+    margin-right: 150px;
+    width: 110px;
+}
+
+
+.search{
+    display: flex;
+    width: 65%;
+
+}
+
+.header>.search>button>img{
+    width: 20px;
+}
+
+
+.header>.search>input{
+
+    width: 90%;
+    height: 20px;
+    padding: 10px;
+    border-radius: 0px;
+    border: 1px solid gray;
+}
+
+.header>.search>input:hover{
+    box-shadow: 0 0 3px gray;
+}
+
+.header>.search>input:focus{
+
+    box-shadow: inset 0 0 5px rgb(105, 213, 255);
+}
+
+.header>.search>button{
+    width: 75px;
+    height: 42px;
+    padding: 3px;
+    margin-left: 0;
+    border: 1px solid gray;
+    border-left: none;
+}
+
+.header>.voice_search>button>img{
+    width: 27px;
+    height: 35;
+
+}
+
+.header>.voice_search>button{
+    border-radius: 100px;
+    border: none;
+    width: 50px;
+    padding: 5px;
+    
+}
+.header button:hover{
+    box-shadow: 0 0 4px grey
+}
+
+.header> .apps>button>img,.bell-icon>button>img,.upload>button>img{
+    width: 25px;
+}
+
+.header> .apps>button,.bell-icon>button,.upload>button,.avatar>button{
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background: none ;
+    margin: 0 10px;
+}
+
+.header> .upload>button{
+    margin-left: 100px;
+}
+
+.header>.avatar{
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.avatar>button{
+    width: 50px;
+    height: 50px;
+}
+
+.header>.avatar>button>img{
+    width: 40px;
+}
+
+
+.content{
+    width: 90%;
+    flex-direction: column;
+    display: flex;
+
+}
+
+
+    </style>
 
 </head>
 
 <body>
 
-    <div class="cintainer">
+    
+    <div class="header">
+
+        <div class="logo">
+            <img src="./download.png" alt="Youtube">
+        </div>
+
+
+        <div class="search">
+            <input type="text" placeholder="Search" name="search" id="search">
+            <button>  <img src="./icons/header/Icon.png" alt="">  </button>
+        </div>
+
+        <div class="voice_search">
+            <button> <img src="./icons/header/voice Search.png" alt=""> </button>
+        </div>
+
+        <div class="upload">
+            <button> <img src="./icons/header/upload new.png" alt=""> </button>
+        </div>
+
+        <div class="apps">
+            <button> <img src="./icons/header/Apps.png" alt=""> </button>
+            
+        </div>
+        
+        <div class="bell-icon">
+            <button> <img src="./icons/header/bell icon.png" alt=""> </button>
+        </div>
+
+        <div class="avatar">
+
+            <button> <img src="./icons/header/avatar.png" alt=""> </button>
+        </div>
+
+    </div>
+
+
+    <div class="container">
 
         <div class="left_option_bar">
-
-            <div class="options" >
-                <!-- <i class="fa fa-bars" > </i> -->
-                
+    
+            <div class="options icon" >
+                <img src="./icons/left_option/option.jpg" alt="option">
+                                
             </div>
             
-            <div class="home">
-                <img width="70px" src="./icons/left_option/Library.jpg" alt="">
+            <div class="home icon">
+                <img src="./icons/left_option/home.jpg" alt="home">
+                <p> Home </p>
             </div>
-            <div class="explore"></div>
-            <div class="shorts"></div>
-            <div class="subscription"></div>
-            <div class="library"></div>
+
+            <div class="explore icon">
+                <img src="./icons/left_option/Explore.jpg" alt="explore" >
+                <p> Explore </p> 
+            </div>
+
+            <div class="shorts icon">
+                <img src="./icons/left_option/Shorts.jpg" alt="shorts">
+                <p> Shorts </p>
+            </div>
+
+            <div class="subscription icon">
+                <img src="./icons/left_option/subscription.jpg" alt="subscription">
+                <p> Subscription</p>
+            </div>
+
+            <div class="library icon">
+                <img src="./icons/left_option/Library.jpg" alt="library">
+                <p> Library </p>
+            </div>
         </div>
+
+
+        <div class="content">
+
+        </div>
+
 
     </div>
 
