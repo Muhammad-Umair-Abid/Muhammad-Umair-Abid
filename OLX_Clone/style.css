@@ -3,7 +3,7 @@
 }
 
 
-#header{
+#header {
     position: sticky;
     top: 0px;
     z-index: 1;
@@ -14,6 +14,9 @@
     top: 5px;
 }
 
+.navbar-brand{
+    width: 10%;
+}
 
 .country_select {
     width: 40%;
@@ -33,7 +36,7 @@
 
 
 #country {
-
+    
     padding: 15px;
     width: 100%;
     background: url(https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-21.png) no-repeat 10px 15px;
@@ -45,6 +48,7 @@
     font-family: sans-serif;
     font-size: 18px;
     color: gray;
+    background-color: white;
 }
 
 .search {
@@ -88,81 +92,95 @@
     box-shadow: 0 1px 4px rgb(206, 204, 204) !important;
 }
 
-.slider{
+.slider {
     display: flex;
     justify-content: center;
     margin: 0 20px;
 }
 
-/* .container-fluid{
-    width: 90%;
-    display: flex;
 
 
-} */
-
-/* 
-.row{
-    width: 100%;
-} */
-
-.footer_img{
-    width: 100%;
-}
-
-.card{
-    /* border: 1px solid black !important; */
-    height: 250px;
+.card {
+    height: 270px;
     width: 300px;
 }
 
-.card-img-top{
-    width: 100%;
-    height: 100%;
+
+.card-img-top {
+    width: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
     background-color: rgb(85, 77, 77);
 }
 
 
-footer{
-    width: 100% !important;
-    margin: 0px;
-}
-
-footer p{
-    margin-bottom: 0px;
-}
-
-
-.content_card{
-    height: 260px;
-    width: 300px !important;
-    margin-bottom: 10px !important;
-
-}
-
-
-.card>.card-img-top{
+.card>.card-img-top {
     /* width: 296px;  */
-    height: 150px ;
+    height: 150px;
 }
 
-.card>.card-img-top>img{
+.card>.card-img-top>img {
     width: auto;
     height: 100%;
 }
 
-.card>.card-body{
+.card>.card-body {
     height: 80px;
+    padding-top: 10px;
 }
 
-.card>.card-body>.card-title{
-    margin: 1px 3px;
-    position: relative;
-    top: 2px;
+.card>.card-body>.card-title {
+
     font-family: sans-serif;
-    font-weight: 200;
-    /* padding: 5px 10px */
+    font-size: 20px;
+    margin-bottom: 0px;
 }
 
+
+.load_more>button{
+    border: 1px solid rgb(32, 32, 32) ;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 0 3px rgb(32, 32, 32) ;
+
+}
+
+.load_more>button:hover{
+    background-color: rgba(250, 250, 250, 0.99);
+    box-shadow: 0 0 5px rgb(32, 32, 32);
+}
+
+
+.footer_img {
+    width: 100%;
+}
+
+
+.footer {
+display: flex;
+justify-content: center;
+}
+
+
+footer p {
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+
+.footer h6{
+    font-size: 0.8em;
+    font-weight: 200;
+}
+
+
+
+.footer{
+    width: 100% !important;
+}
+
+.copyright{
+    color: white;
+}
