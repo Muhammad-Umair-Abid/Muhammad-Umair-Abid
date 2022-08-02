@@ -134,26 +134,35 @@ footer p{
     margin-bottom: 0px;
 }
 
-footer h6{
-    
-}
 
 .content_card{
     height: 260px;
     width: 300px !important;
+    margin-bottom: 10px !important;
 
 }
+
 
 .card>.card-img-top{
     /* width: 296px;  */
     height: 150px ;
 }
 
+.card>.card-img-top>img{
+    width: auto;
+    height: 100%;
+}
+
 .card>.card-body{
     height: 80px;
 }
 
-.card>.card-body *{
-    margin: 3px 10px;
-    pad: 5px 10px;
+.card>.card-body>.card-title{
+    margin: 1px 3px;
+    position: relative;
+    top: 2px;
+    font-family: sans-serif;
+    font-weight: 200;
+    /* padding: 5px 10px */
 }
+
