@@ -1,136 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <title>TEST</title>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   <style>
+    <title>TEST</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" href="https://seeklogo.com/images/O/olx-logo-20F1656D13-seeklogo.com.png" type="image/x-icon">
 
 
-    .country_select{
-        width: 40%;
-    }
 
 
-    #country_form{
-        display: flex;
-    }
-
-    #country_form>div{
-        font-size: 14px;
-        /* padding: 30px; */
-        margin: 10px;
-    }
+    <style>
+        .country_select {
+            width: 40%;
+        }
 
 
-    #country{
+        #country_form {
+            display: flex;
+        }
 
-        padding: 15px;
-        width: 100%;
-        background: url(https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-21.png) no-repeat 10px 15px;
-        background-size: 20px;
-        padding-left: 40px;
-        border-radius: 5px;
-        border: 2px solid black;
-        box-shadow: 0 0 5px rgb(132, 132, 233);
-        font-family: sans-serif;
-        font-size: 18px;
-        color: gray;
-    }
+        #country_form>div {
+            font-size: 14px;
+            /* padding: 30px; */
+            margin: 10px;
+        }
 
-    .search{
-        border-radius: 5px;
-        border: 2px solid black;
-        box-shadow: 0 0 5px rgb(132, 132, 233);
 
-        height:55px ;
-    }
+        #country {
 
-    .login>*{
-        font-size: x-large;
-        color: black;
-        font-family: sans-serif;
-        text-decoration: underline;
-    }
-    
-    .input-group-text{
-        cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            background: url(https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-21.png) no-repeat 10px 15px;
+            background-size: 20px;
+            padding-left: 40px;
+            border-radius: 5px;
+            border: 2px solid black;
+            box-shadow: 0 0 5px rgb(132, 132, 233);
+            font-family: sans-serif;
+            font-size: 18px;
+            color: gray;
+        }
 
-    }
+        .search {
+            border-radius: 5px;
+            border: 2px solid black;
+            box-shadow: 0 0 5px rgb(132, 132, 233);
 
-    .login{
-        display: flex;
-        align-items: center;
-    }
+            height: 55px;
+        }
 
-    .submit{
-        background: none;
-        border: none;
-        border-radius: 50px;
-    }
+        .login>* {
+            font-size: x-large;
+            color: black;
+            font-family: sans-serif;
+            text-decoration: underline;
+        }
 
-    .submit:hover{
-        /* box-shadow: 0 0 3px gray; */
-        cursor: pointer;
-    }
-/*    
+        .input-group-text {
+            cursor: pointer;
+
+        }
+
+        .login {
+            display: flex;
+            align-items: center;
+        }
+
+        .submit {
+            background: none;
+            border: none;
+            border-radius: 50px;
+        }
+
+        .submit:hover {
+            /* box-shadow: 0 0 3px gray; */
+            cursor: pointer;
+        }
+
+        /*    
 form{
     width: 100%;
     display: flex;
-
 } */
-   </style>
+    </style>
 </head>
+
 <body>
 
-<div class="container-fluid">
-    <form id="country_form" action="#">
-        <a class="navbar-brand" href="#"><img src="./download.png" style="width: 100px;" alt=""></a>
-        <div class="country_select">
-            <select id="country">
-                <option value="pakistan" selected disabled hidden>Pakistan</option>
-                <option value="azad kashmmir">Azad Kashmir, Pakistan</option>
-                <option value="balochistan">Balochistan, Pakistan</option>
-                <option value="islamabad">Islamabad, Pakistan</option>
-                <option value="punjab">Punjab, Pakistan</option>
-                <option value="sindh">Sindh, Pakistan</option>
-                <option value="northen">Northen Areas, Pakistan</option>
-            </select>
-        </div>
-
-        <div class="input-group search mb-4">
-            <input type="text" class="form-control" placeholder="Find Cars, Mobile Phones and more" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <span class="input-group-text bg-dark" style="color:white ;">Go</span>
+    <div class="container-fluid">
+        <form id="country_form" action="#">
+            <a class="navbar-brand" href="#"><img src="./download.png" style="width: 100px;" alt=""></a>
+            <div class="country_select">
+                <select id="country">
+                    <option value="pakistan" selected disabled hidden>Pakistan</option>
+                    <option value="azad kashmmir">Azad Kashmir, Pakistan</option>
+                    <option value="balochistan">Balochistan, Pakistan</option>
+                    <option value="islamabad">Islamabad, Pakistan</option>
+                    <option value="punjab">Punjab, Pakistan</option>
+                    <option value="sindh">Sindh, Pakistan</option>
+                    <option value="northen">Northen Areas, Pakistan</option>
+                </select>
             </div>
-          </div>       
-        
-          <div class="login">
-            <a href="#">Login</a>
-          </div>
 
-          
-            <div >
+            <div class="input-group search mb-4">
+                <input type="text" class="form-control" placeholder="Find Cars, Mobile Phones and more"
+                    aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <span class="input-group-text bg-dark" style="color:white ;">Go</span>
+                </div>
+            </div>
+
+            <div class="login">
+                <a href="#">Login</a>
+            </div>
+
+
+            <div>
                 <button class="submit"> <img src="./Sell-btn.png"> </button>
             </div>
-    </form>
+        </form>
 
+    </div>
+
+
+    <br><br><br>
+<div class="container">
+    
 </div>
 
+    <div class="row">
 
-<br><br><br>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.olx.com.pk/thumbnails/270768391-240x180.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        
 
-<div class="card" style="width: 18rem;">
-    <img src="https://images.olx.com.pk/thumbnails/270768391-240x180.webp" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.olx.com.pk/thumbnails/270768391-240x180.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        
+
+        
+        <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.olx.com.pk/thumbnails/270768391-240x180.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        
+
+        
+        <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.olx.com.pk/thumbnails/270768391-240x180.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        
+
+        
+        <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.olx.com.pk/thumbnails/270768391-240x180.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        
+
+        
+        <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.olx.com.pk/thumbnails/270768391-240x180.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        
+
+
+
     </div>
-  </div>
-    
 
 
 
-    
+
 </body>
+
 </html>

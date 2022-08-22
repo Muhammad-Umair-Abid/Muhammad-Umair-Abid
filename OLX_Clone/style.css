@@ -2,16 +2,18 @@
     font-family: sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
 
 #header {
     position: sticky;
     top: 0px;
     z-index: 1;
-}
-
-.navbar {
     width: 100%;
-    top: 5px;
+}
+.navbar_wrapper{
+    width: 100%;
 }
 
 .navbar-brand{
@@ -19,19 +21,19 @@
 }
 
 .country_select {
+    margin: 0px;
     width: 40%;
 }
 
 
+
 #country_form {
     display: flex;
-    width: 100%;
 }
 
 #country_form>div {
-    font-size: 14px;
-    /* padding: 30px; */
-    margin: 10px;
+    font-size: 12px;
+    margin: 5px;
 }
 
 
