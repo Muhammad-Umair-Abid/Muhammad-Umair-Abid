@@ -51,6 +51,10 @@
    }
 
    function displayResults(filteredList) {
+
+      let list = document.getElementById('listItem');
+      list.innerHTML = "";
+
       filteredList.forEach(movie => {
          let img = "https://image.tmdb.org/t/p/w45"
          let tableRow = document.createElement('tr');
